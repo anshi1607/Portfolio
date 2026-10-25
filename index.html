@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anshi Chaturvedi | Portfolio</title>
+  <meta name="description" content="Anshi Chaturvedi – B.Tech CSE student, DSA enthusiast and web developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="cursor-glow" id="glow"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo">AC<span>.</span></a>
+    <nav class="links" id="links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <canvas id="net"></canvas>
+      <div class="hero-inner">
+        <p class="chip mono"><i class="dot"></i> B.Tech CSE · Banasthali Vidyapith · Open to internships</p>
+        <h1 class="hero-title">
+          <span class="line"><span>Hi, I'm</span></span>
+          <span class="line"><span class="accent">Anshi Chaturvedi.</span></span>
+        </h1>
+        <p class="hero-sub mono">I build <span id="typed"></span><span class="caret">|</span></p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn primary">See my work →</a>
+          <a href="#contact" class="btn ghost">Let's talk</a>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint mono">scroll ↓</a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="track"><span>C++</span><span>C</span><span>SQL</span><span>DSA</span><span>DBMS</span><span>JavaScript</span><span>Flask</span><span>Git &amp; GitHub</span><span>C++</span><span>C</span><span>SQL</span><span>DSA</span><span>DBMS</span><span>JavaScript</span><span>Flask</span><span>Git &amp; GitHub</span></div>
+    </div>
+
+    <!-- ABOUT (bento) -->
+    <section id="about" class="section">
+      <h2 class="sec-title reveal"><span class="mono">01 /</span> About me</h2>
+      <div class="bento">
+        <article class="tile big reveal">
+          <h3>Logic first, then polish.</h3>
+          <p>I'm a Computer Science &amp; Engineering student at Banasthali Vidyapith who enjoys solving problems with clean, efficient code. I'm strong in C++, Data Structures &amp; Algorithms and databases, and I'm growing into web development and machine learning. I like building solutions that are secure, scalable and genuinely useful — and I'm comfortable leading a team and pitching an idea to a panel of judges.</p>
+        </article>
+        <article class="tile stat reveal"><b data-count="70">0</b><span>LeetCode problems solved</span></article>
+        <article class="tile stat reveal"><b data-count="9.47" data-dec="2">0</b><span>CGPA out of 10</span></article>
+        <article class="tile stat reveal"><b data-count="7" data-pre="#">0</b><span>SIH 2026 internal rank</span></article>
+        <article class="tile wide reveal">
+          <h4 class="mono">// currently</h4>
+          <ul class="now">
+            <li>Learning <em>Machine Learning fundamentals</em></li>
+            <li>Leveling up <em>JavaScript DOM &amp; frontend development</em></li>
+            <li>Practising <em>DSA daily</em> on LeetCode</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="sec-title reveal"><span class="mono">02 /</span> Projects &amp; work</h2>
+      <div class="filters reveal" id="filters">
+        <button class="f active" data-f="all">All</button>
+        <button class="f" data-f="web">Web</button>
+        <button class="f" data-f="dsa">DSA</button>
+        <button class="f" data-f="learning">Learning</button>
+      </div>
+      <div class="grid" id="projGrid">
+        <article class="card tilt reveal" data-cat="web">
+          <span class="num mono">01 · Aug–Sep 2026</span>
+          <h3>PulsePay</h3>
+          <p>A web-based payment solution co-developed for Smart India Hackathon 2026 — ranked 7th in the internal evaluation. I designed the application architecture and workflow pipelines and turned the requirements into a working prototype, deployed live on Vercel.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Flask</span><span>Vercel</span></div>
+          <div class="links-row"><a href="#">Live demo ↗</a><a href="https://github.com/anshi1607" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+        <article class="card tilt reveal" data-cat="dsa">
+          <span class="num mono">02 · 2026</span>
+          <h3>DSA Practice Streak</h3>
+          <p>70+ problems solved on LeetCode and the 50 Days Badge (2026), earned through consistent daily practice in data structures and algorithms using C++.</p>
+          <div class="tags"><span>C++</span><span>DSA</span><span>LeetCode</span></div>
+          <div class="links-row"><a href="https://leetcode.com/u/anshi1607" target="_blank" rel="noopener">LeetCode profile ↗</a></div>
+        </article>
+        <article class="card tilt reveal" data-cat="learning">
+          <span class="num mono">03 · In progress</span>
+          <h3>Machine Learning Journey</h3>
+          <p>Building a solid base in machine learning fundamentals while sharpening frontend skills with JavaScript DOM manipulation. More projects coming soon.</p>
+          <div class="tags"><span>ML basics</span><span>JavaScript</span><span>Python</span></div>
+          <div class="links-row"><a href="https://github.com/anshi1607" target="_blank" rel="noopener">Follow on GitHub ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="sec-title reveal"><span class="mono">03 /</span> Skills <small>(hover or tap a card)</small></h2>
+      <div class="flips">
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">C++</span><b>C++</b></div>
+          <div class="face back"><p>Primary language for DSA and problem solving.</p><em class="mono">core</em></div>
+        </div>
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">C</span><b>C</b></div>
+          <div class="face back"><p>Strong base in systems programming.</p><em class="mono">core</em></div>
+        </div>
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">SQL</span><b>SQL</b></div>
+          <div class="face back"><p>Queries &amp; database management systems.</p><em class="mono">core</em></div>
+        </div>
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">🧠</span><b>DSA</b></div>
+          <div class="face back"><p>70+ LeetCode problems, 50 Days Badge.</p><em class="mono">daily practice</em></div>
+        </div>
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">JS</span><b>JavaScript</b></div>
+          <div class="face back"><p>DOM manipulation &amp; frontend.</p><em class="mono">learning</em></div>
+        </div>
+        <div class="flip reveal" tabindex="0">
+          <div class="face front"><span class="ico">🐙</span><b>Git &amp; GitHub</b></div>
+          <div class="face back"><p>Version control and collaboration, in VS Code.</p><em class="mono">tools</em></div>
+        </div>
+      </div>
+      <p class="soft reveal mono">soft skills → public speaking · problem solving · team management · adaptability</p>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section">
+      <h2 class="sec-title reveal"><span class="mono">04 /</span> Journey</h2>
+      <ol class="timeline">
+        <li class="reveal"><time class="mono">Sep 2026</time><h4>Team lead — SIH 2026 (Internal Round)</h4><p>Led the team to 7th rank with PulsePay and delivered a 2-minute pitch to a judges panel.</p></li>
+        <li class="reveal"><time class="mono">2026</time><h4>LeetCode 50 Days Badge</h4><p>Solved 70+ problems through consistent DSA practice.</p></li>
+        <li class="reveal"><time class="mono">2025</time><h4>SIH 2025 &amp; started B.Tech CSE</h4><p>Joined Banasthali Vidyapith and took part in Smart India Hackathon as a first-year student.</p></li>
+        <li class="reveal"><time class="mono">2023–24</time><h4>Class XII — 90.0%</h4><p>Class X: 93.3% (2021–22), UP Kirana Seva Samiti Balika Vidyalaya.</p></li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2 class="sec-title reveal"><span class="mono">05 /</span> Contact</h2>
+      <div class="contact-wrap">
+        <div class="reveal">
+          <p class="lead">Have an idea or an opportunity? <br /><span class="accent">Let's build it together.</span></p>
+          <div class="socials">
+            <a href="mailto:itsanshi16072006@gmail.com">✉ itsanshi16072006@gmail.com</a>
+            <a href="https://github.com/anshi1607" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://linkedin.com/in/anshi-chaturvedi-975766382" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://leetcode.com/u/anshi1607" target="_blank" rel="noopener">LeetCode ↗</a>
+          </div>
+        </div>
+        <form class="form reveal" id="form">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="msg" rows="4" placeholder="Say hello…" required></textarea>
+          <button class="btn primary" type="submit">Send message →</button>
+          <p class="note mono" id="note" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">© <span id="yr"></span> Anshi Chaturvedi · Built with HTML, CSS &amp; JS</footer>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
