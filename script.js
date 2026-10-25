@@ -140,14 +140,35 @@ $$(".tilt").forEach(card => {
 /* ===== flip cards: tap support on touch devices ===== */
 $$(".flip").forEach(f => f.addEventListener("click", () => f.classList.toggle("on")));
 
-/* ===== contact form (opens mail app; swap for Formspree later) ===== */
-$("#form").addEventListener("submit", e => {
+/* ===== contact form: sends straight to your inbox via Web3Forms ===== */
+const WEB3FORMS_KEY = "d51e8e5c-7597-49e0-99d1-69ba078dbad0";
+
+$("#form").addEventListener("submit", async e => {
   e.preventDefault();
-  const d = new FormData(e.target);
-  const body = encodeURIComponent(`${d.get("msg")}\n\n— ${d.get("name")} (${d.get("email")})`);
-  location.href = `mailto:itsanshi16072006@gmail.com?subject=Portfolio%20message&body=${body}`;
-  $("#note").textContent = "Opening your mail app… thanks! ✨";
-  e.target.reset();
+  const form = e.target, note = $("#note"), btn = $("button[type=submit]", form);
+  const d = new FormData(form);
+  d.set("message", d.get("message") || d.get("msg"));
+
+  if (WEB3FORMS_KEY.startsWith("PASTE")) {
+    const body = encodeURIComponent(`${d.get("message")}\n\n— ${d.get("name")} (${d.get("email")})`);
+    location.href = `mailto:itsanshi16072006@gmail.com?subject=Portfolio%20message&body=${body}`;
+    return;
+  }
+
+  d.append("access_key", WEB3FORMS_KEY);
+  d.append("subject", "New message from your portfolio");
+  d.append("from_name", "Portfolio Contact Form");
+  btn.disabled = true; btn.textContent = "Sending…"; note.textContent = "";
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: d });
+    const data = await res.json();
+    if (data.success) { note.textContent = "Message sent! I'll get back to you soon ✨"; form.reset(); }
+    else throw new Error(data.message);
+  } catch (err) {
+    note.textContent = "Oops, something went wrong. Please email me directly.";
+  } finally {
+    btn.disabled = false; btn.textContent = "Send message →";
+  }
 });
 
 $("#yr").textContent = new Date().getFullYear();
